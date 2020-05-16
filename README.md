@@ -4,7 +4,7 @@ It was inspired by (in)famous [APL's one-line](https://aplwiki.com/wiki/John_Sch
 
 To port the algorithm, a small prototype library with APL-style Array were created—so, technically, it is not a one-statement implementation, but I still prefer to think about it as "one-statement" one, as the class implemented is of generic use (somewhat like [Numo::NArray](https://github.com/ruby-numo/numo-narray)), and operations used are familiar to any Rubyist.
 
-You can read an [explanatory article]() in my blog, but here we'll just show an implementation:
+You can read an [explanatory article](https://zverok.github.io/blog/2020-05-16-ruby-as-apl.html) in my blog, but here we'll just show an implementation:
 
 ```ruby
 require 'apl'
