@@ -26,14 +26,14 @@ puts "...then compare with 3 & 4",
   current_gen.wrap
     .product(AA[-1, 0, 1], &:hrotate)
     .product(AA[-1, 0, 1], &:vrotate)
-    .reduce(&:+).reduce(&:+)
+    .flatten(1).reduce(&:+)
     .eq(AA[3, 4])
 
 puts "...then AND with 1 and source",
   current_gen.wrap
     .product(AA[-1, 0, 1], &:hrotate)
     .product(AA[-1, 0, 1], &:vrotate)
-    .reduce(&:+).reduce(&:+)
+    .flatten(1).reduce(&:+)
     .eq(AA[3, 4])
     .zip(AA[1, current_gen], &:&)
 
@@ -41,7 +41,7 @@ puts "...then OR both",
   current_gen.wrap
     .product(AA[-1, 0, 1], &:hrotate)
     .product(AA[-1, 0, 1], &:vrotate)
-    .reduce(&:+).reduce(&:+)
+    .flatten(1).reduce(&:+)
     .eq(AA[3, 4])
     .zip(AA[1, current_gen], &:&)
     .reduce(&:|)
@@ -50,7 +50,7 @@ puts "...and unwrap",
   current_gen.wrap
     .product(AA[-1, 0, 1], &:hrotate)
     .product(AA[-1, 0, 1], &:vrotate)
-    .reduce(&:+).reduce(&:+)
+    .flatten(1).reduce(&:+)
     .eq(AA[3, 4])
     .zip(AA[1, current_gen], &:&)
     .reduce(&:|)
@@ -60,7 +60,7 @@ def life(current_gen)
   current_gen.wrap
     .product(AA[-1, 0, 1], &:hrotate)
     .product(AA[-1, 0, 1], &:vrotate)
-    .reduce(&:+).reduce(&:+)
+    .flatten(1).reduce(&:+)
     .eq(AA[3, 4])
     .zip(AA[1, current_gen], &:&)
     .reduce(&:|)
